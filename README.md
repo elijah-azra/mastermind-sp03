@@ -7,15 +7,11 @@ Studentnummer:
 Als er nog geen omgeving genaamd s2-ai is, creeer deze dan door in Anaconda Prompt naar de directory van dit project te 
 gaan en daar te typen: ```conda env create -f S2_AI_conda.yaml```
 
-# Code draaien
-De code kan vervolgens op verschillende manieren gedraaid worden
-- Vanuit je Command Line Interface (Anaconda Prompt)
-- Vanuit je IDE
+# Interpreter instellen in Pycharm, er zijn twee wegen
+1. Ga naar File -> Settings -> Project: <ProjectName> -> Project Interpreter -> Dan: of
+  a. Kies S2-AI in het dropdown menu
+  b. Add Interpreter -> Add Local Interpreter -> Conda Environment -> Use Existing Environment -> S2-AI in dropdown menu
+2. Klik rechtsonder in de GUI waar je "Python" ziet staan. (Dit werkt in de huidige versie van Pycharm niet op elk systeem)
 
-## CLI
-- Ga naar de root van je project
-- type: ```conda activate s2-ai```
-
-## IDE, Pycharm, VSCode
-- Pycharm: Selecteer de juiste python omgeving om je code mee te draaien. Je python omgeving is een "interpreter". 
-- Deze kan je via settings instellen of door rechts onder in de GUI te klikken waar je "Python" ziet staan.
+# Interpreter instellen in VSCode
+1. Klik rechtsonder in de GUI waar je "Python" ziet staan. Er komt middenbovenin je scherm een dropdown menu, kies daar: S2-AI
