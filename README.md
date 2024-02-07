@@ -15,7 +15,6 @@ De code kan vervolgens op verschillende manieren gedraaid worden
 ## CLI
 - Ga naar de root van je project
 - type: ```conda activate s2-ai```
-- en dan ```python main.py```
 
 ## IDE, Pycharm, VSCode
 - Pycharm: Selecteer de juiste python omgeving om je code mee te draaien. Je python omgeving is een "interpreter". 
