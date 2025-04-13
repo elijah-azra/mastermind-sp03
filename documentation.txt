@@ -5,10 +5,12 @@ knuth algorithm: #puedocode
 4. if response == {black:4, white:0}
     game won
 5. remove all codes from S that do not match response relative to guess
-# example: guess 1234, response {black:3,white:1}, all codes with 5 or 6 immediately removed.
+# example: guess 1234, response {black:3,white:1}, all codes that respond differently to the guess when they are set as the code are removed from S
 6. iterate over all codes and find which next guess eliminates most possibilities
 7. input next guess
 8. return to step 3
+
+above is my interpretation of: https://en.wikipedia.org/wiki/Mastermind_(board_game)#Worst_case:_Five-guess_algorithm
 
 genetic algorithm:
 1. initialize first guess (random)
@@ -28,3 +30,5 @@ genetic algorithm:
 7. repeat 5-6 until next population equals 100
 8. pick random member from current population and make a guess
 9. if black = 4, terminate algorithm else, repeat from step 2.
+
+above is my interpretation of: https://en.wikipedia.org/wiki/Mastermind_(board_game)#Genetic_algorithm
