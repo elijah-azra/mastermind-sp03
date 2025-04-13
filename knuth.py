@@ -5,6 +5,7 @@ class KnuthMastermindSolver:
     def __init__(self):
         self.numbers = ['1', '2', '3', '4', '5', '6']
         self.all_codes = [''.join(code) for code in itertools.product(self.numbers, repeat=4)]
+        self.code = []
 
     def get_feedback(self, guess, code):
         black = sum(g == c for g, c in zip(guess, code))  # checks how many correct positions
@@ -58,10 +59,10 @@ class KnuthMastermindSolver:
         return guesses
 
 
-# Usage example:
 if __name__ == "__main__":
     solver = KnuthMastermindSolver()
     code_to_guess = '6414'
-    turns_taken = solver.solve(code_to_guess)
-    print(f"Solved with {turns_taken} guesses.")
-
+    guesses, feedback = solver.solve(code_to_guess)
+    print(f"Solved with the following guesses and feedback:")
+    for guess, fb in zip(guesses, feedback):
+        print(f"Guess: {guess}, Feedback: {fb}")
