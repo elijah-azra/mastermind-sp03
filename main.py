@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import knuth
 from gen import *
+import genetic_algorithm as gene
 
 
 class MastermindGame:
@@ -11,7 +12,7 @@ class MastermindGame:
 
         self.code_length = 4
         self.num_digits = 6
-        self.solver = knuth.KnuthMastermindSolver()
+        self.solver = gene.GeneticAlgorithm()
 
         self.create_initial_widgets()
 

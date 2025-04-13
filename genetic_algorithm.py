@@ -37,10 +37,14 @@ class GeneticAlgorithm:
         for member in self.current_population:
             total_score = 0
             for guess, (expected_black, expected_white) in historical_guesses:
+                current_score = 8  # base score of 8
                 black, white = self.get_feedback(member, guess)
-                deviation = (abs(black - expected_black) * -2) + (abs(white - expected_white) * -1)
-                total_score += deviation
-            self.scores.append(total_score / len(historical_guesses))  # Average score across all historical guesses
+                deviation = (abs(black - expected_black) * 2) + (abs(white - expected_white) * 1)
+                # ^ takes difference between feedbacks and removes from score based on deviation
+                total_score += (current_score - deviation)
+                # ^ adds score to total
+            self.scores.append(total_score / len(historical_guesses))
+            # ^ Average score across all historical guesses, the higher, the better
 
     def select_parents(self):
         """Select two parents based on their scores (higher scores are better)."""
@@ -67,7 +71,7 @@ class GeneticAlgorithm:
 
         return child
 
-    def solver(self, code):
+    def solve(self, code):
         # Step 1
         first_guess = self.generate_random_guess()
         print(f"Initial guess: {first_guess}")
@@ -104,8 +108,15 @@ class GeneticAlgorithm:
                 print(f"Secret code found: {guess}")
                 return_list = []
                 for i in historical_guesses:
-                    return_list.append(i[0])
-
+                    k = ""
+                    for j in i[0]:
+                        k += str(j)
+                    return_list.append(k)
+                print(return_list)
                 return return_list
 
 
+if __name__ == "__main__":
+    # test case
+    genetic_algorithm = GeneticAlgorithm()
+    genetic_algorithm.solve("6342")
